@@ -54,7 +54,9 @@ js.write("""var icons = {
 """)
 
 # Browe all icons from icon-svg folder
-for filename in sorted(os.listdir("icon-svg")):
+
+svg_files = list(filter(lambda f: f.endswith('.svg'), os.listdir("icon-svg")))
+for filename in sorted(svg_files):
     icon = os.path.join("icon-svg", filename)
     # checking if it is a file
     if os.path.isfile(icon):
